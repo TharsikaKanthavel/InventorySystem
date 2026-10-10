@@ -1,0 +1,19 @@
+{
+  "name": "moolai-inventory-web",
+  "version": "1.0.8",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.16.0" },
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm start -w server",
+    "test": "npm test -w server",
+    "db:migrate": "npm run db:migrate -w server",
+    "db:seed": "npm run db:seed -w server",
+    "db:rollforward": "npm run db:rollforward -w server"
+  },
+  "devDependencies": { "concurrently": "^9.2.1", "prettier": "^3.9.7" },
+  "overrides": { "uuid": "11.1.1" }
+}

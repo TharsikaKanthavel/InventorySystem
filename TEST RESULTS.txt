@@ -1,0 +1,25 @@
+MOOLAI INVENTORY WEB 1.0.8 - EXPANDED REGRESSION RESULTS
+10 October 2026
+
+49 server regression tests passed, zero failed or skipped in the final run.
+Includes authentication, CSRF, origin checks, branch isolation, imports, exports,
+depreciation rounding and financial-year boundaries, concurrent serial allocation,
+MySQL constraints, reset/recovery and classification/protection workflows.
+
+Together with the earlier 6 browser checks, 3 startup checks and 1 upgrade check,
+this provides 59 recorded checks. The earlier 23 integration checks are included
+in the 49, and have not been counted twice. Browser/startup/upgrade tests were not
+repeated: application code has not changed since their successful runs.
+
+Continuation changes: corrected an obsolete test that expected freely editable
+source types. It now tests editable item lookups; separate workflow tests enforce
+the Hospital/Donation restriction. No application runtime code changed.
+
+The first attempt could not connect because the isolated test server was stopped.
+After restarting it, 48/49 passed; the old source-list test failed as expected under
+the new requirements. After updating that test, the final 49/49 passed.
+
+Temporary test databases only. No hospital records were changed.
+This is not a security certification. Live HTTPS deployment, another-PC access,
+load tests and accountant approval remain outstanding.
+Reset protection is not a full accounting-period edit lock.
